@@ -1,0 +1,40 @@
+body{
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#head{
+    color: #484D6D;
+}
+
+#head2{
+    color: #484D6D;
+}
+
+#main-box{
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#btn{
+    background-color: #484D6D;
+    color: white;
+    width: 40%;
+}
+
+.nav-link{
+    color: #EE6352;
+}
+.nav-link:hover{
+    color: #EE6352;
+}
+
+#return{
+    background-color: #484D6D;
+    color: #484D6D;
+}
