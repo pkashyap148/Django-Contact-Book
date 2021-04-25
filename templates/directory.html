@@ -33,6 +33,37 @@
   <div class="col-md-3"></div>
   </div>
 </div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" id="main-box">
+
+      <h4 id="head2" class='text-center'>Enter Name to Search </h4>
+            <form action="/directory/" method="post">{% csrf_token %}
+            <div class="mb-3">
+                <input type="text" name="searchname" class="form-control" placeholder="Enter Name Here" required>
+            </div>
+
+            <div class="mb-3 d-flex justify-content-center">
+            <input id="btn" type="submit" class="form-control" value="Search">
+            </div>
+            </form>
+            {% if x == 1 %}
+            <div class="alert alert-primary" role="alert">
+              Contact Found SuccessFully !
+            </div>
+            {% elif x == 2 %}
+            <div class="alert alert-danger" role="alert">
+              Contact Not Found !
+          </div>
+            {% else %}
+            <p></p>
+            {% endif %}
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
 
 
 {% endblock %}

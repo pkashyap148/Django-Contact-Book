@@ -15,9 +15,20 @@ def home(req):
     return render(req,'index.html', context)
 
 def phonebook(req):
+    x = 0
     obj = directory.objects.all()
+    # search
+    if req.method == 'POST':
+        search = req.POST.get('searchname').title()
+        for i in obj:
+            if search in i.name:
+                x = 1
+            else:
+                x = 2
+    print(x)
     context = {
-        'obj': obj
+        'obj': obj,
+        'x' : x
     }
     return render(req, 'directory.html',context)
 
@@ -33,3 +44,4 @@ def deletecont(req):
         'f' : flag
         }  
     return render(req, 'delete.html', context)
+
