@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Contact{% endblock %}
+
+{% block body %}
+
+<h3 class="text-center" id="head2">Delete Contact</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center" id="main-box">
+            <h4 id="head2">Enter Contact Name</h4>
+            <form action="/delete/" method="post">{% csrf_token %}
+            <div class="mb-3">
+                <input type="text" name="delname" class="form-control" placeholder="Enter Name Here" required>
+            </div>
+            <div class="mb-3 d-flex justify-content-center">
+            <input id="btn" type="submit" class="form-control" value="Delete">
+            </div>
+            </form>
+            {% if f %}
+            <div class="alert alert-primary" role="alert">
+                Contact Deleted SuccessFully !
+            </div>
+            {% elif not f %}
+                <p></p>
+            {% else %}
+            <div class="alert alert-danger" role="alert">
+                Contact Not Exist !
+            </div>
+            {% endif %}
+            {% include 'nav.html' %}
+            <a href="/"><span  class="badge bg-secondary">Return</span></a>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+{% endblock %}
