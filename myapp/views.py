@@ -15,6 +15,7 @@ def home(req):
     return render(req,'index.html', context)
 
 def phonebook(req):
+    det=''
     x = 0
     obj = directory.objects.all()
     # search
@@ -23,12 +24,14 @@ def phonebook(req):
         for i in obj:
             if search in i.name:
                 x = 1
+                det = i.number
             else:
                 x = 2
     print(x)
     context = {
         'obj': obj,
-        'x' : x
+        'x' : x,
+        'det': det
     }
     return render(req, 'directory.html',context)
 
